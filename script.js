@@ -3,6 +3,10 @@
 // in the html.
 let date = dayjs().format('dddd, MMMM DD, YYYY')
 //console.log(date)
+let currentDay = document.getElementById('currentDay');
+let paragraph = document.createElement('p')
+paragraph.innerText = date
+currentDay.appendChild(paragraph)
 $(function () {
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
