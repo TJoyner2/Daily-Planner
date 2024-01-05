@@ -12,17 +12,39 @@
 //WHEN I refresh the page
 //THEN the saved events persist
 
-
-$(function () {
-const timeArray = document.querySelectorAll('.time-block')
-
-
-
-
 let date = dayjs().format('dddd, MMMM DD, YYYY')
 //console.log(date)
 let currentDay = document.getElementById('currentDay');
 let paragraph = document.createElement('p')
 paragraph.innerText = date
 currentDay.appendChild(paragraph)
+
+$(function () {
+for (let i=0; i<timeArray.length; i++){
+    const timeArray = document.querySelectorAll('.time-block')
+    console.log (timeArray)
+    const now = dayjs().hour()
+
+console.log (now)
+    if(now === hour){
+        timeArray[i].setAttribute('class', 'row time block present')
+    }
+    if(now > hour){
+        timeArray[i].setAttribute('class', 'row time-block past')
+    }
+    if(now < hour){
+        timeArray[i].setAttribute('class', 'row time-block future')
+    }
+    const text = localstorage.getItem(timeArray[i].id)
+    if(text){
+       console.log(text)
+       timeArray[i].children[1].value=text
+    }
+}
+
+    
+
+
+
+
 });
