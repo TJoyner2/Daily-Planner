@@ -1,10 +1,3 @@
-
-
-$(function () {
-  var saveBtn =$('#save-button');
-  console.log(saveBtn);
-
-  
 //  GIVEN I am using a daily planner to create a schedule
 //WHEN I open the planner
 //THEN the current day is displayed at the top of the calendar
@@ -18,12 +11,3 @@ $(function () {
 //THEN the text for that event is saved in local storage
 //WHEN I refresh the page
 //THEN the saved events persist
-
-
-let date = dayjs().format('dddd, MMMM DD, YYYY')
-//console.log(date)
-let currentDay = document.getElementById('currentDay');
-let paragraph = document.createElement('p')
-paragraph.innerText = date
-currentDay.appendChild(paragraph)
-});
