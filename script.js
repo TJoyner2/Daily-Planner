@@ -12,12 +12,7 @@
 //WHEN I refresh the page
 //THEN the saved events persist
 
-let date = dayjs().format('dddd, MMMM DD, YYYY')
-//console.log(date)
-let currentDay = document.getElementById('currentDay');
-let paragraph = document.createElement('p')
-paragraph.innerText = date
-currentDay.appendChild(paragraph)
+
 
 $(function () {
 for (let i=0; i<timeArray.length; i++){
@@ -40,11 +35,29 @@ console.log (now)
        console.log(text)
        timeArray[i].children[1].value=text
     }
+const clickHandler = (event) => {
+    const text = event.target.previousElementSibling.value
+    const parentId = event.target.parentNode.id
+    console.log (text)
+    console.log (parentID)
+    localStorage.setItem (parentID, text)
+
+const button = document.querySelectorAll('button')
+const textInput = document.querySelectorAll('.description')
+
+
+
+}
 }
 
     
 
 
-
+let date = dayjs().format('dddd, MMMM DD, YYYY')
+//console.log(date)
+let currentDay = document.getElementById('currentDay');
+let paragraph = document.createElement('p')
+paragraph.innerText = date
+currentDay.appendChild(paragraph)
 
 });
