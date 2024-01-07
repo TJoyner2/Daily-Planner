@@ -11,3 +11,13 @@
 //THEN the text for that event is saved in local storage
 //WHEN I refresh the page
 //THEN the saved events persist
+
+Created a daily planner that is color coded by past, present and future. 
+
+Deplyed URL
+https://tjoyner2.github.io/Daily-Planner/
+
+Github url
+https://github.com/TJoyner2/Daily-Planner
+
+
