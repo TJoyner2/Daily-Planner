@@ -28,18 +28,29 @@ console.log (now)
     if(now < hour){
         timeArray[i].setAttribute('class', 'row time-block future')
     }
-    const text = localstorage.getItem(timeArray[i].id)
+    const text = localStorage.getItem(timeArray[i].id)
     if(text){
        console.log(text)
        timeArray[i].children[1].value=text
     }
 }
 const clickHandler = (event) => {
-    const text = event.target.previousElementSibling.value
-    const parentId = event.target.parentNode.id
-    console.log (text)
-    console.log (parentID)
-    localStorage.setItem (parentID, text)
+    console.log(event.target)
+    if(event.target.getAttribute("class")==="fas fa-save"){
+        const text = event.target.parentNode.previousElementSibling.value
+        const parentId = event.target.parentNode.parentNode.id
+        //console.log (text)
+        console.log (parentId)
+        localStorage.setItem (parentId, text)
+    }
+    else{
+        const text = event.target.previousElementSibling.value
+        const parentId = event.target.parentNode.id
+        console.log (text)
+        console.log (parentId)
+        localStorage.setItem (parentId, text)
+    }
+  
 }
 
 const button = document.querySelectorAll('button')
